@@ -1,0 +1,15 @@
+{
+    "name": "cabico/gs",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Cabico\\Gs\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "cabico"
+        }
+    ],
+    "require": {}
+}
