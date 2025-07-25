@@ -1,18 +1,23 @@
 <?php
 
 use Cabico\Gs\Models\StudentModel;
-use Cabico\Gs\Core\Crud;
 
 require 'vendor/autoload.php';
 
-$student = new StudentModel;
+$students = new StudentModel;
 
-$this->id = 9;
-$this->name = "Shaira";
-$this->course = "BSIT";
-$this->year_level = 0;
-$this->section = " ";
+$students->id= 69;
+$students->name="bebong";
+$students->course="IT";
+$students->year_level=1;
+$students->section="D";
 
-// $listofStudent = $Student->read();
+$students->create();
+//$student->delete();
+//$student->update();
+//$student->read();
 
-// print_r($lisofStudents);
+
+
+
+?>
