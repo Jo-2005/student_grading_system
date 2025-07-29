@@ -1,9 +1,11 @@
 <?php
 
 namespace Cabico\Gs\Core;
+use mysqli;
 
-class Database {
+class Database{
     protected $conn;
+
     public function __construct(){
        $host = 'localhost';
        $db = 'oop';

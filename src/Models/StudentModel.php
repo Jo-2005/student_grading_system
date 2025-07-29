@@ -1,6 +1,6 @@
 <?php
 
-namespace Cabico\Gs\StudentModel;
+namespace Cabico\Gs\Models;
 
 use Cabico\Gs\Core\Crud;
 use Cabico\Gs\Core\Database;
@@ -24,10 +24,10 @@ class StudentModel extends Database implements Crud{
     }
     
     public function create(){
-        $query = $this->conn->prepare("INSERT INTO `students`(`id`, `name`, `course`, `year_level`, `sections`)
+        $query = $this->conn->prepare("INSERT INTO `students`(`id`, `name`, `course`, `year_level`, `section`)
         VALUES ('$this->id','$this->name','$this->course','$this->section','$this->year_level')");
         if($query->execute()){
-            echo "inserted";
+            echo "Student inserted!";
         }
     }
 
@@ -42,9 +42,8 @@ class StudentModel extends Database implements Crud{
 
     }
     public function update($id){
-        $this->id =$id;
         $query = $this->conn->prepare
-        ("UPDATE `students` SET id='$this->id',name='$this->name',course='$this->course',year_level='$this->year_level',sections='$this->section'WHERE id = $id");
+        ("UPDATE `students` SET id='$this->id',name='$this->name',course='$this->course',year_level='$this->year_level',section='$this->section'WHERE id = $id");
         if($query->execute()){
          echo "Student Updated Succesfully!!\n";
         }
@@ -52,10 +51,9 @@ class StudentModel extends Database implements Crud{
        }
      
      public function delete($id){
-        $this->id =$id;
-        $query = $this->conn->prepare("DELETE FROM `students`WHERE id = $this->id");
+        $query = $this->conn->prepare("DELETE FROM `students`WHERE id = $id");
          if($query->execute()){
-             echo "Student Deleted!!";
+             echo "Student Deleted!!\n";
          }
      }
  }
